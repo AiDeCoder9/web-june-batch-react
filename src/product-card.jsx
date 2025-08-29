@@ -1,11 +1,12 @@
 function ProductCard(props) {
+  const { title, price = "200", currency = "USD", inStock = true } = props;
   return (
     <div>
-      <h6>{props.title}</h6>
+      {title && <h6>{title}</h6>}
       <p>
-        {props.price} <span>{props.currency}</span>
+        {price} <span>{currency}</span>
       </p>
-      {props.inStock ? <span>In Stock</span> : <span>Out of Stock</span>}
+      {inStock ? <span>In Stock</span> : <span>Out of Stock</span>}
     </div>
   );
 }
