@@ -1,33 +1,22 @@
-import Button from "./button";
-import FruitList from "./fruitlist";
-import Greeting from "./greeting";
-import Login from "./login";
-import ProductCard from "./product-card";
-import StatusIndicator from "./status-indicator";
+// Core concept of React: Props - Parent to Child, props cannot be changed
+// Core concept of React: State
+
+import { useState } from "react";
 
 function App() {
+  const [count, setCount] = useState(10);
+  const decrease = () => {
+    setCount(count - 1);
+  };
+
+  const increase = () => {
+    setCount(count + 1);
+  };
   return (
     <div>
-      <h1>Hello World</h1>
-      <FruitList />
-      <Login />
-      <Greeting name="Sajan" />
-      <Greeting name="Sushil" />
-      <Greeting name="Rajani" />
-      <Greeting name="Pujan" />
-      <ProductCard title="Macbook" price="100" currency="Rs" inStock={false} />
-      <ProductCard title="Asus Laptop" price="100" />
-      <ProductCard title="Asus Laptop" />
-      <ProductCard />
-      <StatusIndicator />
-
-      <p>This is a simple React application.</p>
-      {/* props */}
-      <Button title="Sign In" color="green" />
-      <Button title="Register" color="yellow" />
-      <Button title="Loading" color="gold" />
-      <Button title="Contact Us" color="purple" />
-      <Button title="Email Us" color="blue" />
+      <button onClick={decrease}>Decrease</button>
+      <span>{count}</span>
+      <button onClick={increase}>Increase</button>
     </div>
   );
 }
