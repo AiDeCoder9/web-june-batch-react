@@ -1,24 +1,33 @@
-// Core concept of React: Props - Parent to Child, props cannot be changed
-// Core concept of React: State
-
 import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(10);
-  const decrease = () => {
-    setCount(count - 1);
+  const [first, setFirst] = useState(10);
+  const [output, setOutput] = useState(null);
+
+  const handleFirst = (event) => {
+    setFirst(event.target.value);
   };
 
-  const increase = () => {
-    setCount(count + 1);
+  const check = () => {
+    if (first % 2 === 0) {
+      setOutput("Even");
+    } else {
+      setOutput("Odd");
+    }
   };
   return (
     <div>
-      <button onClick={decrease}>Decrease</button>
-      <span>{count}</span>
-      <button onClick={increase}>Increase</button>
+      <h1>Even Odd Checker App</h1>
+      <h1>{output}</h1>
+      <input
+        value={first}
+        onChange={handleFirst}
+        className="border"
+        type="number"
+      />
+
+      <button onClick={check}>Check</button>
     </div>
   );
 }
-
 export default App;
