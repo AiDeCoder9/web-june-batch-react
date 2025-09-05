@@ -2,6 +2,7 @@ import Footer from "../components/footer";
 import Header from "../components/header";
 import ClientsSection from "../sections/clients";
 import LessionSection from "../sections/lessions";
+import ManageSection from "../sections/manage";
 
 function Nextcent() {
   return (
@@ -11,52 +12,8 @@ function Nextcent() {
       <main>
         <LessionSection />
         <ClientsSection />
+        <ManageSection />
 
-        <section className="bg-white mb-[42px] px-[144px]">
-          <div>
-            <h2 className="mb-[8px] font-semibold text-[#4d4d4d] text-4xl text-center">
-              Manage your entire community <br />
-              in a single system
-            </h2>
-            <p className="mb-[16px] font-normal text-[#717171] text-[24px] text-base text-center">
-              Who is Nextcent suitable for
-            </p>
-          </div>
-        </section>
-        <section className="bg-white mb-[42px] px-[144px]">
-          <div>
-            <img src="./image/Icon.png" alt="Icon" />
-            <h3 className="mb-[10px] font-bold text-[#4d4d4d] text-[28px] text-center">
-              Membership Organizations
-            </h3>
-            <p className="mb-[66px] font-normal text-[#717171] text-[24px] text-base text-center">
-              Our membership management software provides full automation of
-              membership renewals and payments
-            </p>
-          </div>
-          <div>
-            <img src="./image/Icon (1).png" alt="Icon 1" />
-            <h3 className="mb-[10px] font-bold text-[#4d4d4d] text-[28px] text-center">
-              National <br />
-              Associations
-            </h3>
-            <p className="mb-[66px] font-normal text-[#717171] text-[24px] text-base text-center">
-              Our membership management software provides full automation of
-              membership renewals and payments
-            </p>
-          </div>
-          <div>
-            <img src="./image/Icon (2).png" alt="Icon 2" />
-            <h3 className="mb-[10px] font-bold text-[#4d4d4d] text-[28px] text-center">
-              Clubs and <br />
-              Groups
-            </h3>
-            <p className="mb-[66px] font-normal text-[#717171] text-[24px] text-base text-center">
-              Our membership management software provides full automation of
-              membership renewals and payments
-            </p>
-          </div>
-        </section>
         <section className="bg-white mb-[48px] px-[144px]">
           <div>
             <img src="./image/Frame 35.png" alt="Frame 35" />
