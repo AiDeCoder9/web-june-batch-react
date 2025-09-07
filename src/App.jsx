@@ -1,6 +1,7 @@
-import Nextcent from "./apps/nexcent";
+import Login from "./pages/login";
 
 function App() {
-  return <Nextcent />;
+  return <Login />;
 }
+
 export default App;
