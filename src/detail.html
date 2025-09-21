@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classic Margherita Pizza - Recipe Detail</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b">
+      <div
+        class="flex justify-between items-center mx-auto px-4 py-4 max-w-4xl"
+      >
+        <button
+          class="flex items-center text-gray-600 hover:text-gray-900 transition-colors"
+        >
+          <i class="fa-arrow-left mr-2 text-xl fas"></i>
+          <span class="font-medium text-sm">Back</span>
+        </button>
+        <div class="flex space-x-3">
+          <button
+            class="bg-gray-100 hover:bg-gray-200 p-2 rounded-full transition-colors"
+          >
+            <i class="text-gray-600 fas fa-heart"></i>
+          </button>
+          <button
+            class="bg-gray-100 hover:bg-gray-200 p-2 rounded-full transition-colors"
+          >
+            <i class="text-gray-600 fas fa-share-alt"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="mx-auto px-4 pb-8 max-w-4xl">
+      <!-- Hero Image -->
+      <div class="relative -mt-0 mb-6">
+        <img
+          src="https://cdn.dummyjson.com/recipe-images/1.webp"
+          alt="Classic Margherita Pizza"
+          class="shadow-lg rounded-b-2xl w-full h-80 object-cover"
+        />
+        <div
+          class="bottom-4 left-4 absolute bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full"
+        >
+          <span class="font-medium text-orange-600 text-sm">Italian</span>
+        </div>
+      </div>
+
+      <!-- Recipe Header -->
+      <div class="bg-white shadow-sm mb-6 p-6 border rounded-2xl">
+        <h1 class="mb-3 font-bold text-gray-900 text-3xl">
+          Classic Margherita Pizza
+        </h1>
+
+        <!-- Rating and Reviews -->
+        <div class="flex items-center mb-4">
+          <div class="flex items-center">
+            <div class="flex mr-2 text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <span class="font-semibold text-gray-900 text-lg">4.6</span>
+            <span class="ml-1 text-gray-500">({98} reviews)</span>
+          </div>
+        </div>
+
+        <!-- Recipe Stats -->
+        <div class="gap-4 grid grid-cols-4">
+          <div class="bg-gray-50 p-3 rounded-lg text-center">
+            <i class="mb-2 text-orange-500 text-xl fas fa-clock"></i>
+            <p class="text-gray-600 text-sm">Prep Time</p>
+            <p class="font-semibold text-gray-900">20 min</p>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-lg text-center">
+            <i class="mb-2 text-red-500 text-xl fas fa-fire"></i>
+            <p class="text-gray-600 text-sm">Cook Time</p>
+            <p class="font-semibold text-gray-900">15 min</p>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-lg text-center">
+            <i class="mb-2 text-blue-500 text-xl fas fa-users"></i>
+            <p class="text-gray-600 text-sm">Servings</p>
+            <p class="font-semibold text-gray-900">4</p>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-lg text-center">
+            <i class="mb-2 text-green-500 text-xl fas fa-tachometer-alt"></i>
+            <p class="text-gray-600 text-sm">Difficulty</p>
+            <p class="font-semibold text-gray-900">Easy</p>
+          </div>
+        </div>
+
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span
+            class="bg-orange-100 px-3 py-1 rounded-full font-medium text-orange-700 text-sm"
+            >Pizza</span
+          >
+          <span
+            class="bg-orange-100 px-3 py-1 rounded-full font-medium text-orange-700 text-sm"
+            >Italian</span
+          >
+          <span
+            class="bg-purple-100 px-3 py-1 rounded-full font-medium text-purple-700 text-sm"
+            >Dinner</span
+          >
+          <span
+            class="bg-green-100 px-3 py-1 rounded-full font-medium text-green-700 text-sm"
+            >300 cal/serving</span
+          >
+        </div>
+      </div>
+
+      <!-- Content Sections -->
+      <div class="gap-6 grid lg:grid-cols-3">
+        <!-- Ingredients -->
+        <div class="lg:col-span-1">
+          <div class="top-4 sticky bg-white shadow-sm p-6 border rounded-2xl">
+            <h2 class="flex items-center mb-4 font-bold text-gray-900 text-xl">
+              <i class="mr-2 text-orange-500 fas fa-shopping-basket"></i>
+              Ingredients
+            </h2>
+            <ul class="space-y-3">
+              <li class="flex items-center">
+                <input
+                  type="checkbox"
+                  class="mr-3 rounded focus:ring-orange-500 w-4 h-4 text-orange-500"
+                />
+                <span class="text-gray-700">Pizza dough</span>
+              </li>
+              <li class="flex items-center">
+                <input
+                  type="checkbox"
+                  class="mr-3 rounded focus:ring-orange-500 w-4 h-4 text-orange-500"
+                />
+                <span class="text-gray-700">Tomato sauce</span>
+              </li>
+              <li class="flex items-center">
+                <input
+                  type="checkbox"
+                  class="mr-3 rounded focus:ring-orange-500 w-4 h-4 text-orange-500"
+                />
+                <span class="text-gray-700">Fresh mozzarella cheese</span>
+              </li>
+              <li class="flex items-center">
+                <input
+                  type="checkbox"
+                  class="mr-3 rounded focus:ring-orange-500 w-4 h-4 text-orange-500"
+                />
+                <span class="text-gray-700">Fresh basil leaves</span>
+              </li>
+              <li class="flex items-center">
+                <input
+                  type="checkbox"
+                  class="mr-3 rounded focus:ring-orange-500 w-4 h-4 text-orange-500"
+                />
+                <span class="text-gray-700">Olive oil</span>
+              </li>
+              <li class="flex items-center">
+                <input
+                  type="checkbox"
+                  class="mr-3 rounded focus:ring-orange-500 w-4 h-4 text-orange-500"
+                />
+                <span class="text-gray-700">Salt and pepper to taste</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="lg:col-span-2">
+          <div class="bg-white shadow-sm p-6 border rounded-2xl">
+            <h2 class="flex items-center mb-6 font-bold text-gray-900 text-xl">
+              <i class="mr-2 text-orange-500 fa-list-ol fas"></i>
+              Instructions
+            </h2>
+            <div class="space-y-6">
+              <div class="flex">
+                <div
+                  class="flex flex-shrink-0 justify-center items-center bg-orange-500 mt-1 mr-4 rounded-full w-8 h-8 font-bold text-white text-sm"
+                >
+                  1
+                </div>
+                <div class="flex-1">
+                  <p class="text-gray-700 leading-relaxed">
+                    Preheat the oven to 475°F (245°C).
+                  </p>
+                </div>
+              </div>
+              <div class="flex">
+                <div
+                  class="flex flex-shrink-0 justify-center items-center bg-orange-500 mt-1 mr-4 rounded-full w-8 h-8 font-bold text-white text-sm"
+                >
+                  2
+                </div>
+                <div class="flex-1">
+                  <p class="text-gray-700 leading-relaxed">
+                    Roll out the pizza dough and spread tomato sauce evenly.
+                  </p>
+                </div>
+              </div>
+              <div class="flex">
+                <div
+                  class="flex flex-shrink-0 justify-center items-center bg-orange-500 mt-1 mr-4 rounded-full w-8 h-8 font-bold text-white text-sm"
+                >
+                  3
+                </div>
+                <div class="flex-1">
+                  <p class="text-gray-700 leading-relaxed">
+                    Top with slices of fresh mozzarella and fresh basil leaves.
+                  </p>
+                </div>
+              </div>
+              <div class="flex">
+                <div
+                  class="flex flex-shrink-0 justify-center items-center bg-orange-500 mt-1 mr-4 rounded-full w-8 h-8 font-bold text-white text-sm"
+                >
+                  4
+                </div>
+                <div class="flex-1">
+                  <p class="text-gray-700 leading-relaxed">
+                    Drizzle with olive oil and season with salt and pepper.
+                  </p>
+                </div>
+              </div>
+              <div class="flex">
+                <div
+                  class="flex flex-shrink-0 justify-center items-center bg-orange-500 mt-1 mr-4 rounded-full w-8 h-8 font-bold text-white text-sm"
+                >
+                  5
+                </div>
+                <div class="flex-1">
+                  <p class="text-gray-700 leading-relaxed">
+                    Bake in the preheated oven for 12-15 minutes or until the
+                    crust is golden brown.
+                  </p>
+                </div>
+              </div>
+              <div class="flex">
+                <div
+                  class="flex flex-shrink-0 justify-center items-center bg-orange-500 mt-1 mr-4 rounded-full w-8 h-8 font-bold text-white text-sm"
+                >
+                  6
+                </div>
+                <div class="flex-1">
+                  <p class="text-gray-700 leading-relaxed">
+                    Slice and serve hot.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex sm:flex-row flex-col gap-4 mt-8">
+        <button
+          class="flex flex-1 justify-center items-center bg-orange-500 hover:bg-orange-600 px-6 py-4 rounded-xl font-semibold text-white transition-colors"
+        >
+          <i class="mr-2 fas fa-play"></i>
+          Start Cooking
+        </button>
+        <button
+          class="flex flex-1 justify-center items-center px-6 py-4 border border-gray-300 hover:border-gray-400 rounded-xl font-semibold text-gray-700 transition-colors"
+        >
+          <i class="mr-2 fas fa-bookmark"></i>
+          Save Recipe
+        </button>
+      </div>
+    </main>
+  </body>
+</html>

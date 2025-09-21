@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Grid</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <div class="mx-auto py-10 container">
+      <!-- Category List -->
+      <div class="mb-6">
+        <h2 class="mb-4 font-semibold text-3xl">Categories</h2>
+        <div id="category-list" class="flex space-x-4 overflow-x-auto">
+          <!-- Category buttons will be injected here -->
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <div
+        id="product-grid"
+        class="gap-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+      >
+        <!-- Products will be injected here -->
+      </div>
+    </div>
+
+    <script>
+      // Fetch data from the API
+      axios.get('https://dummyjson.com/products')
+        .then(response => {
+          const products = response.data.products;
+
+          // Display Categories
+          const categories = [...new Set(products.map(p => p.category))];
+          let categoryButtonsHTML = categories.map(category =>
+            ⁠ <button onclick="filterProducts('${category}', products)" class="bg-gray-300 px-4 py-2 rounded-md">${category}</button> ⁠
+          ).join('');
+
+          document.getElementById('category-list').innerHTML = categoryButtonsHTML;
+
+          // Display all products initially
+          displayProducts(products);
+
+          // Function to filter products by category
+          window.filterProducts = (category, products) => {
+            const filteredProducts = category === 'All' ? products : products.filter(p => p.category === category);
+            displayProducts(filteredProducts);
+          };
+
+          // Function to display products in the grid
+          function displayProducts(products) {
+            const grid = document.getElementById('product-grid');
+            let productsHTML = products.map(product => `
+              <div class="bg-white shadow-lg hover:shadow-xl p-4 rounded-lg transition-shadow">
+                <img src="${product.image}" alt="${product.name}" class="mb-4 rounded-md w-full h-64 object-cover">
+                <h3 class="font-semibold text-xl">${product.name}</h3>
+                <p class="text-gray-600">${product.description.slice(0, 100)}...</p>
+                <p class="mt-2 font-bold text-lg">$${product.price}</p>
+              </div>
+            `).join('');
+
+            grid.innerHTML = productsHTML;
+          }
+        })
+        .catch(error => console.error('Error fetching products:', error));
+    </script>
+  </body>
+</html>
