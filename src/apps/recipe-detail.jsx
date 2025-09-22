@@ -9,11 +9,14 @@ import {
 } from "phosphor-react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, useParams } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
+import Loading from "../components/loading";
+import Error from "../components/error";
 
 function RecipeDetail() {
   //params
   const { id } = useParams();
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -33,27 +36,22 @@ function RecipeDetail() {
   useEffect(() => {
     fetchRecipeDetail();
   }, []);
-  console.log(data, "data");
+
+  const goBack = () => {
+    navigate(-1);
+  };
 
   return (
     <>
-      {loading && (
-        <div className="mx-auto px-4 py-8 container">
-          <div className="flex justify-center items-center">
-            <div className="border-b-2 border-blue-600 rounded-full w-12 h-12 animate-spin"></div>
-            <span className="ml-3 text-gray-600">Loading recipes...</span>
-          </div>
-        </div>
-      )}
       <header className="bg-white shadow-sm border-b">
         <div className="flex justify-between items-center mx-auto px-4 py-4 max-w-4xl">
-          <Link
-            to="/"
+          <button
+            onClick={goBack}
             className="flex items-center text-gray-600 hover:text-gray-900 transition-colors"
           >
             <ArrowLeft className="mr-2 text-xl" />
             <span className="font-medium text-sm">Back</span>
-          </Link>
+          </button>
           <div className="flex space-x-3">
             <button className="bg-gray-100 hover:bg-gray-200 p-2 rounded-full transition-colors">
               <Heart weight="fill" className="text-gray-600" />
@@ -64,7 +62,8 @@ function RecipeDetail() {
           </div>
         </div>
       </header>
-      {error && <p className="text-center">{error}</p>}
+      {loading && <Loading message="Loading recipe detail" />}
+      {error && <Error />}
       {data && (
         <main className="mx-auto px-4 pb-8 max-w-4xl">
           <div className="relative -mt-0 mb-6">
