@@ -1,17 +1,15 @@
+import { useContext } from "react";
 import NoteItem from "./note-item";
+import { NotesContext } from "../../notecontext";
 
-export default function NotesList(props) {
-  const { notes, handleEdit, handleDelete } = props;
+export default function NotesList() {
+  const notesContext = useContext(NotesContext);
+  const { notes } = notesContext;
 
   return (
     <div>
       {notes.map((note) => (
-        <NoteItem
-          handleDelete={handleDelete}
-          handleEdit={handleEdit}
-          key={note.id}
-          note={note}
-        />
+        <NoteItem key={note.id} note={note} />
       ))}
     </div>
   );

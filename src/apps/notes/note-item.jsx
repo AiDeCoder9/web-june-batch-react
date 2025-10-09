@@ -1,5 +1,10 @@
+import { useContext } from "react";
+import { NotesContext } from "../../notecontext";
+
 export default function NoteItem(props) {
-  const { note, handleDelete } = props;
+  const notesContext = useContext(NotesContext);
+  const { note } = props;
+  const { handleDelete } = notesContext;
 
   return (
     <div className="shadow-xl mb-6 p-6 border border-gray-400 rounded-md w-full">

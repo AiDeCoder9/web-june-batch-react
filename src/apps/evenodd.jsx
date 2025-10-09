@@ -1,6 +1,10 @@
-import { useState } from "react";
-
+import { useContext, useState } from "react";
+import Multiply from "./multiply";
+import { NotesContext } from "../notecontext";
 function EvenOdd() {
+  const notesContext = useContext(NotesContext);
+  const { handleDelete } = notesContext;
+
   const [first, setFirst] = useState(10);
   const [output, setOutput] = useState(null);
 
@@ -25,8 +29,10 @@ function EvenOdd() {
         className="border"
         type="number"
       />
+      <Multiply />
 
       <button onClick={check}>Check</button>
+      <button onClick={() => handleDelete(2)}>Note Delete</button>
     </div>
   );
 }
