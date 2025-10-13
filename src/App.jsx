@@ -1,4 +1,4 @@
-import Login from "./apps/login";
+import Demo from "./apps/demo";
 export default function App() {
-  return <Login />;
+  return <Demo />;
 }
